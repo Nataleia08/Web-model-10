@@ -1,5 +1,5 @@
 """
-URL configuration for my_site_hw10 project.
+URL configuration for site_project project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,9 +16,9 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, include
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path('', include('noteapp.urls')),
 ]

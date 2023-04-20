@@ -3,6 +3,7 @@ from django.contrib.postgres.fields import ArrayField
 
 # Create your models here.
 
+
 class Authors(models.Model):
 
     fullname = models.CharField(max_length=200)
@@ -10,8 +11,25 @@ class Authors(models.Model):
     born_location = models.CharField(max_length=200)
     description = models.CharField(max_length=2000)
 
+    def __str__(self):
+        return f"{self.fullname}"
+
+
 
 class Quotes(models.Model):
     tags = ArrayField(models.CharField(max_length=30), size=10)
     author = models.ForeignKey(Authors, on_delete=models.CASCADE)
     quote = models.CharField(max_length=2000)
+
+    def __str__(self):
+        return f"{self.quote}, {self.author}. Tags: {self.tags}"
+
+
+class UsersSite(models.Model):
+    nickname = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200)
+    login = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.nickname}"
