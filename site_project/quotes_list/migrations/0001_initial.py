@@ -70,7 +70,7 @@ class Migration(migrations.Migration):
                     "author",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="noteapp.authors",
+                        to="quotes_list.authors",
                     ),
                 ),
             ],

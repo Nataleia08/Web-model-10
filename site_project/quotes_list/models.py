@@ -31,6 +31,7 @@ class UsersSite(models.Model):
     phone = models.CharField(max_length=200)
     login = models.CharField(max_length=200)
 
+
     def __str__(self):
         return f"{self.nickname}"
 
