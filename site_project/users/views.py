@@ -39,11 +39,11 @@ def login_user(request):
             return redirect(to='users:login')
 
         login(request, user)
-        return redirect(to='noteapp:main')
+        return redirect(to='quotes_list:main')
 
     return render(request, 'users/login.html', context={"form": LoginForm()})
 
 @login_required
 def log_out_user(request):
     logout(request)
-    return redirect(to='noteapp:main')
+    return redirect(to='quotes_list:main')
