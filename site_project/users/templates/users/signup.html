@@ -1,4 +1,4 @@
-{% extends "noteapp/base.html" %}
+{% extends "quotes_list/base.html" %}
 
 {% block content %}
 
@@ -46,8 +46,8 @@
         <span>{{ form.errors.password2 }}</span>
     </div>
     <div class="grid">
+        <button type="reset" class="secondary">Cancel</button>
         <button type="submit">Submit</button>
-        <button type="reset" class="secondary">Reset</button>
     </div>
 </form>
 

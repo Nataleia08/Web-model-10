@@ -25,14 +25,6 @@ class Quotes(models.Model):
         return f"{self.quote}, {self.author}. Tags: {self.tags}"
 
 
-class UsersSite(models.Model):
-    nickname = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    phone = models.CharField(max_length=200)
-    login = models.CharField(max_length=200)
 
-
-    def __str__(self):
-        return f"{self.nickname}"
 
 
