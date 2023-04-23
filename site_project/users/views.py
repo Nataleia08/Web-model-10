@@ -47,3 +47,8 @@ def login_user(request):
 def log_out_user(request):
     logout(request)
     return redirect(to='quotes_list:main')
+
+
+@login_required
+def profile(request):
+    return render(request, 'users/profile.html')

@@ -14,10 +14,15 @@ class Authors(models.Model):
     def __str__(self):
         return f"{self.fullname}"
 
+class Tag(models.Model):
+    name = models.CharField(max_length=25, null=False, unique=True)
+
+    def __str__(self):
+        return f"{self.name}"
 
 
 class Quotes(models.Model):
-    tags = ArrayField(models.CharField(max_length=30), size=10)
+    tags = models.ManyToManyField(Tag)
     author = models.ForeignKey(Authors, on_delete=models.CASCADE)
     quote = models.CharField(max_length=2000)
 

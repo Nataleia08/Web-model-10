@@ -1,15 +1,16 @@
 from django import forms
 from . import models
 from django.forms import ModelForm
+from .models import Authors, Quotes
 
 class CreateQuoteForm(ModelForm):
-    tags = forms.MultipleChoiceField(choices=models.Quotes.tags)
     author = forms.ChoiceField(choices=models.Authors.fullname)
     quote = forms.CharField(max_length=100, required=True, widget=forms.TextInput())
 
     class Meta:
         model = models.Quotes
-        fields = ["tags", "author", "quote"]
+        fields = ["author", "quote"]
+        exclude = ['tags']
 
 
 class CreateAuthorForm(ModelForm):
