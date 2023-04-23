@@ -15,15 +15,13 @@
 <div>
     <a href="users/login">Login</a>
 </div>
-    {% if user.is_authenticated %}
     <ul>
-        <li><a href="{% url 'quotes_list:create_quote' %}" role="button">Add quote</a></li>
+        <li><a href="{% url 'create_quote' %}" role="button">Add quote</a></li>
         <li><a href="{% url 'quotes_list:create_author' %}" role="button">Add author</a></li>
     </ul>
     <ul>
         <li>Welcome <b>{{ user.username }}!</b></li>
         <li><a href="{% url 'users:logout' %}" role="button">Logout</a></li>
     </ul>
-    {% else %}
 </body>
 </html>
