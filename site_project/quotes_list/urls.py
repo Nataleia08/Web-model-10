@@ -7,4 +7,6 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('create-author/', views.create_author, name='create-author'),
     path('create-quote/', views.create_quote, name='create-quote'),
+    path('detail/<int:author_id>', views.author_details, name='author_details'),
+
 ]
