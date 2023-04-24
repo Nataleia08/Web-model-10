@@ -1,7 +1,7 @@
 from django import forms
 from . import models
 from django.forms import ModelForm
-from .models import Authors, Quotes
+from .models import Authors, Quotes, Tag
 
 class CreateQuoteForm(ModelForm):
     author = forms.ChoiceField(choices=models.Authors.objects.all())
@@ -22,3 +22,11 @@ class CreateAuthorForm(ModelForm):
     class Meta:
         model = Authors
         fields = ["fullname", "born_date", "born_location", "description"]
+
+
+class TagForm(ModelForm):
+    name = CharField(min_length=3, max_length=25, required=True, widget=TextInput())
+
+    class Meta:
+        model = Tag
+        fields = ['name']

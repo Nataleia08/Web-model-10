@@ -9,12 +9,9 @@
 <main class="container" >
     <h1>Quotes to Scrape</h1>
 </main>
+
+{% if user.is_authenticated %}
 <div>
-    <a href="users/signup">Registration</a>
-</div>
-<div>
-    <a href="users/login">Login</a>
-</div>
     <ul>
         <li><a href="{% url 'quotes_list:create_quote' %}" role="button">Add quote</a></li>
         <li><a href="{% url 'quotes_list:create_author' %}" role="button">Add author</a></li>
@@ -23,5 +20,22 @@
         <li>Welcome <b>{{ user.username }}!</b></li>
         <li><a href="{% url 'users:logout' %}" role="button">Logout</a></li>
     </ul>
+</div>
+{% else %}
+<div>
+    <a href="users/signup">Registration</a>
+</div>
+<div>
+    <a href="users/login">Login</a>
+</div>
+{% endif %}
+
+{% for quote in quotes_list %}
+<p>Author: <b>{{quote.author}}</b></p>
+<p>Text: <kbd>{{quote.quote}}</kbd></p>
+<p>Tags: <b>{{quote.tags}}</b></p>
+{% endfor %}
+
+
 </body>
 </html>

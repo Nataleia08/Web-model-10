@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<form method="POST" action="{% url 'noteapp:note' %}">
+<form method="POST" action="{% url 'quotes_list:create_quote' %}">
     {% csrf_token %}
     <div style="padding: 10px">
         <label> Quote:
-            {{ form.title }}
+            {{ form.quote }}
         </label>
-        <span>{{ form.errors.title }}</span>
+        <span>{{ form.errors.quote }}</span>
     </div>
     <div style="padding: 10px">
         <label> Quote author:
