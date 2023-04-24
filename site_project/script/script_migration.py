@@ -3,8 +3,9 @@ import os
 import django
 from pymongo import MongoClient
 from site_project.quotes_list.models import Authors, Quotes, Tag
+from django.db import models
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE","site_project.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE","quotes_list.settings")
 django.setup()
 
 client = MongoClient("mongodb+srv://nataleia_orlovska:uj40A6wY74dc4u@clusterhw7.uaenqgk.mongodb.net/?retryWrites=true&w=majority")
