@@ -6,9 +6,9 @@
     {% csrf_token %}
     <div style="padding: 10px">
         <label> Name author:
-            {{ form.name }}
+            {{ form.fullname }}
         </label>
-        <span>{{ form.errors.name }}</span>
+        <span>{{ form.errors.fullname }}</span>
     </div>
     <div style="padding: 10px">
         <label> Date born:
