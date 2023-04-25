@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "quotes_list",
     "users",
-    "script"
+    # "script",
+    # "script.script_migration",
 ]
 
 MIDDLEWARE = [

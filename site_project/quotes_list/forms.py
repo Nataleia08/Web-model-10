@@ -4,14 +4,14 @@ from django.forms import ModelForm, ModelMultipleChoiceField
 from .models import Authors, Quotes, Tag
 
 class CreateQuoteForm(ModelForm):
-    author = forms.ChoiceField(choices=models.Authors.objects.all())
+    # author = forms.CharField(max_length=50, required=True, widget=forms.TextInput())
     quote = forms.CharField(max_length=100, required=True, widget=forms.TextInput())
-    # tags = forms.ModelMultipleChoiceField(widget=forms.MultipleChoiceField())
+
 
     class Meta:
         model = Quotes
-        fields = ["author", "quote", "tags"]
-        exclude = ['tags']
+        fields = ["quote"]
+        exclude = ['tags', "author"]
 
 
 class CreateAuthorForm(ModelForm):

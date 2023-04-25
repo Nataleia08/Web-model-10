@@ -1,17 +1,21 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import CreateQuoteForm, CreateAuthorForm
+from .forms import CreateQuoteForm, CreateAuthorForm, TagForm
 from .models import Authors, Quotes, Tag
+from django.core.paginator import Paginator
 
 
 
 # Create your views here.
-def main(request):
+def main(request, page = 1):
     quotes_list = Quotes.objects.all()
-    return render(request, 'quotes_list/index.html', {"quotes_list": quotes_list})
+    per_page = 10
+    paginator = Paginator(quotes_list, per_page)
+    quotes_on_page = paginator.page(page)
+    return render(request, 'quotes_list/index.html', context={"quotes_list": quotes_on_page})
 
 @login_required
 def create_author(request):
@@ -59,8 +63,8 @@ def tag(request):
         form = TagForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(to='noteapp:main')
+            return redirect(to='quotes_list:main')
         else:
-            return render(request, 'noteapp/tag.html', {'form': form})
+            return render(request, 'quotes_list/tag.html', {'form': form})
 
-    return render(request, 'noteapp/tag.html', {'form': TagForm()})
+    return render(request, 'quotes_list/tag.html', {'form': TagForm()})
