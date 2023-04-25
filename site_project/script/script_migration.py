@@ -3,6 +3,7 @@ import os
 import django
 from pymongo import MongoClient
 from site_project.quotes_list.models import Authors, Quotes, Tag
+from site_project.users.models import UsersSite
 from django.db import models
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE","quotes_list.settings")
@@ -32,3 +33,9 @@ for quote in quotes:
         qu = Quotes.objects.create(quote = quote['quote'], author = au)
         for tag in tags:
             q.tags.add(tag)
+
+user_list = db.contact.find()
+
+for us in user_list:
+    UsersSite.objects.get_or_create(nickname = us["fullname"], email = us["email"],
+                                    phone=us["phone"] , login= us["email"])
