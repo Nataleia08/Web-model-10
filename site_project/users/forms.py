@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 class RegisterForm(UserCreationForm):
-    login = forms.CharField(max_length=100,
+    username = forms.CharField(max_length=100,
                                required=True,
                                widget=forms.TextInput())
 
@@ -24,7 +24,7 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'password1', 'password2']
+        fields = ['username', 'password1', 'password2', 'email', 'first_name', 'last_name']
 
 
 class LoginForm(AuthenticationForm):

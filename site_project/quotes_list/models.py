@@ -6,7 +6,7 @@ from django.contrib.postgres.fields import ArrayField
 
 class Authors(models.Model):
 
-    fullname = models.CharField(max_length=200)
+    fullname = models.CharField(max_length=200, unique=True)
     born_date = models.DateField()
     born_location = models.CharField(max_length=200)
     description = models.CharField(max_length=2000)

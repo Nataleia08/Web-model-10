@@ -4,15 +4,17 @@ from PIL import Image
 
 # Create your models here.
 class UsersSite(models.Model):
-    nickname = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    phone = models.CharField(max_length=200)
-    login = models.CharField(max_length=200)
+    username = models.CharField(max_length=200, default="username")
+    email = models.CharField(max_length=200, default="email@example.com")
+    password = models.CharField(max_length=200, default="default password")
+    first_name = models.CharField(max_length=200, default="default first name")
+    last_name = models.CharField(max_length=200, default="default last name")
+    phone = models.CharField(max_length=200, default="+380 00 0000000")
     avatar = models.ImageField(default='default_avatar.png', upload_to='profile_images')
 
 
     def __str__(self):
-        return f"{self.nickname}"
+        return f"{self.username}"
 
     def save(self, *args, **kwargs):
         super().save()

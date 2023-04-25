@@ -10,9 +10,15 @@
         </label>
         <span>{{ form.errors.quote }}</span>
     </div>
+<!--    <div style="padding: 10px">-->
+<!--        <label> Author:-->
+<!--            {{ form.author }}-->
+<!--        </label>-->
+<!--        <span>{{ form.errors.author }}</span>-->
+<!--    </div>-->
     <div style="padding: 10px">
         <label> Quote author:
-            <select name="authors" required>
+            <select name="author" required>
                 {% for author in authors %}
                 <option value="{{author.fullname}}">{{author.fullname}}</option>
                 {% endfor %}

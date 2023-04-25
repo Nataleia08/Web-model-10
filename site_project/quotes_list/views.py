@@ -37,15 +37,17 @@ def create_quote(request):
     if request.method == 'POST':
         form = CreateQuoteForm(request.POST)
         if form.is_valid():
-            new_note = form.save()
+            new_quote = form.save()
 
             choice_tags = Tag.objects.filter(name__in=request.POST.getlist('tags'))
             for tag in choice_tags.iterator():
-                new_note.tags.add(tag)
+                new_quote.tags.add(tag)
+            choice_author = Authors.objects.filter(fullname__in=request.POST.getlist('author'))
+            new_quote.author = choice_author
 
             return redirect(to='quotes_list:main')
         else:
-            return render(request, 'quotes_list/create_quote.html', {"tags": tags, 'form': form})
+            return render(request, 'quotes_list/create_quote.html', {"tags": tags, "author": author, 'form': form})
 
     return render(request, 'quotes_list/create_quote.html', {"tags": tags, 'form': CreateQuoteForm()})
 

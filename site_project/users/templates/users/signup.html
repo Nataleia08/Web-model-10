@@ -9,10 +9,10 @@
 <form method="post" action="{% url 'users:signup' %}">
     {% csrf_token %}
     <div>
-        <label> Login:
-            {{ form.login }}
+        <label> Username:
+            {{ form.username }}
         </label>
-        <span>{{ form.errors.login }}</span>
+        <span>{{ form.errors.username }}</span>
     </div>
     <div>
         <label> Email:

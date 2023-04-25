@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="/static/main.css">
 </head>
 <body>
-    <nav class="col-md-4" >
-        <a href="/" role="button" > Go back to the main page </a>
-    </nav>
+<!--    <nav class="col-md-4" >-->
+<!--        <a href="/" role="button" > Go back to the main page </a>-->
+<!--    </nav>-->
     <div class="container">
         <div class="row header-box">
             <div class="col-md-8">
@@ -35,8 +35,8 @@
 {% else %}
             <div style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
                 <p>
-                    <a href="users/login">Login</a>
-                    <a href="users/signup">Registration</a>
+                    <a href="{% url 'users:login' %}">Login</a>
+                    <a href="{% url 'users:signup' %}">Registration</a>
                 </p>
             </div>
 {% endif %}
