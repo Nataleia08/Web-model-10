@@ -44,9 +44,9 @@ def create_quote(request):
             choice_tags = Tag.objects.filter(name__in=request.POST.getlist('tags'))
             for tag in choice_tags.iterator():
                 new_quote.tags.add(tag)
-            choice_author = Authors.objects.filter(fullname__in=request.POST.getlist('authors'))
-            new_quote.author = choice_author
-            print(choice_author)
+            # choice_author = Authors.objects.filter(fullname__in=request.POST.getlist('authors'))
+            # new_quote.author = choice_author
+            form.fields["author"].queryset = Authors.objects.filter(fullname=form.cleaned_data['author'])
 
             return redirect(to='quotes_list:main')
         else:

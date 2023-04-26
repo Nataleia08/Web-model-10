@@ -4,8 +4,9 @@ from django.forms import ModelForm, ModelMultipleChoiceField
 from .models import Authors, Quotes, Tag
 
 class CreateQuoteForm(ModelForm):
-    author = forms.ModelChoiceField(queryset = Authors.objects.values_list("fullname"), widget=forms.Select(attrs={'class':'dropdown'}))
+    author = forms.ModelChoiceField(queryset = Authors.objects.all(), widget=forms.Select(attrs={'class':'dropdown'}))
     quote = forms.CharField(max_length=1000, required=True, widget=forms.TextInput())
+    # author = forms.CharField(max_length=1000, required=True, widget=forms.TextInput())
 
 
     class Meta:
