@@ -1,11 +1,11 @@
 import os
-
 import django
-
+from django.conf import settings
 
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "site_project.settings")
 django.setup()
+
 
 from pymongo import MongoClient
 
@@ -36,7 +36,7 @@ for quote in quotes:
         au = Authors.objects.get(fullname = author["fullname"])
         qu = Quotes.objects.create(quote = quote['quote'], author = au)
         for tag in tags:
-            q.tags.add(tag)
+            qu.tags.add(tag)
 
 user_list = db.contact.find()
 
