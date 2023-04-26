@@ -25,7 +25,7 @@ def create_author(request):
             form.save()
             return redirect(to='quotes_list:main')
         else:
-            return render(request, 'quotes_list/create_author.html', context={"form": form})
+            return render(request, 'quotes_list/create_author.html', context={"form": form, "message": "Author not created!"})
 
     return render(request, 'quotes_list/create_author.html', context={"form": CreateAuthorForm()})
 
@@ -33,6 +33,8 @@ def create_author(request):
 @login_required
 def create_quote(request):
     tags = Tag.objects.all()
+    authors = Authors.objects.all()
+
 
     if request.method == 'POST':
         form = CreateQuoteForm(request.POST)
@@ -42,14 +44,15 @@ def create_quote(request):
             choice_tags = Tag.objects.filter(name__in=request.POST.getlist('tags'))
             for tag in choice_tags.iterator():
                 new_quote.tags.add(tag)
-            choice_author = Authors.objects.filter(fullname__in=request.POST.get('author'))
+            choice_author = Authors.objects.filter(fullname__in=request.POST.getlist('authors'))
             new_quote.author = choice_author
+            print(choice_author)
 
             return redirect(to='quotes_list:main')
         else:
-            return render(request, 'quotes_list/create_quote.html', {"tags": tags, "author": author, 'form': form})
+            return render(request, 'quotes_list/create_quote.html', context={"tags": tags, "authors": authors, 'form': form, "message": "Quotes not created!"})
 
-    return render(request, 'quotes_list/create_quote.html', {"tags": tags, "author": author, 'form': CreateQuoteForm()})
+    return render(request, 'quotes_list/create_quote.html', context={"tags": tags, "authors": authors, 'form': CreateQuoteForm()})
 
 def author_details(request, author_id):
     author = get_object_or_404(Authors, pk = author_id)
@@ -67,6 +70,6 @@ def tag(request):
             form.save()
             return redirect(to='quotes_list:main')
         else:
-            return render(request, 'quotes_list/tag.html', {'form': form})
+            return render(request, 'quotes_list/tag.html', context={'form': form, "message": "Tag not created!"})
 
-    return render(request, 'quotes_list/tag.html', {'form': TagForm()})
+    return render(request, 'quotes_list/tag.html', context={'form': TagForm()})

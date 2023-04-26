@@ -10,12 +10,6 @@
         </label>
         <span>{{ form.errors.quote }}</span>
     </div>
-<!--    <div style="padding: 10px">-->
-<!--        <label> Author:-->
-<!--            {{ form.author }}-->
-<!--        </label>-->
-<!--        <span>{{ form.errors.author }}</span>-->
-<!--    </div>-->
     <div style="padding: 10px">
         <label> Quote author:
             <select name="author" required>
@@ -25,7 +19,7 @@
             </select>
         </label>
     </div>
-    <div style="padding: 10px">
+    <div style="padding: 10px" width = 100%>
         <label> Select tags:
             <select name="tags" multiple="multiple" required>
                 {% for tag in tags %}
