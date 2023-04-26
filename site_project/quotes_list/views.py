@@ -42,14 +42,14 @@ def create_quote(request):
             choice_tags = Tag.objects.filter(name__in=request.POST.getlist('tags'))
             for tag in choice_tags.iterator():
                 new_quote.tags.add(tag)
-            choice_author = Authors.objects.filter(fullname__in=request.POST.getlist('author'))
+            choice_author = Authors.objects.filter(fullname__in=request.POST.get('author'))
             new_quote.author = choice_author
 
             return redirect(to='quotes_list:main')
         else:
             return render(request, 'quotes_list/create_quote.html', {"tags": tags, "author": author, 'form': form})
 
-    return render(request, 'quotes_list/create_quote.html', {"tags": tags, 'form': CreateQuoteForm()})
+    return render(request, 'quotes_list/create_quote.html', {"tags": tags, "author": author, 'form': CreateQuoteForm()})
 
 def author_details(request, author_id):
     author = get_object_or_404(Authors, pk = author_id)
