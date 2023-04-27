@@ -13,13 +13,6 @@
     padding-right: 15px
 }
 
-.quote {
-    padding: 10px;
-    margin-bottom: 30px;
-    border: 1px solid #333333;
-    border-radius: 5px;
-    box-shadow: 2px 2px 3px #333333;
-}
 
 .pager {
     padding-left: 0;
@@ -54,8 +47,7 @@
     padding-right: 15px;
 }
 
-element.style {
-}
+
 .tag {
     padding: 2px 5px;
     border-radius: 5px;
@@ -67,3 +59,35 @@ element.style {
     display: block;
     margin: 4px;
 }
+
+.quote {
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #333333;
+}
+
+.quote small.author {
+    font-weight: bold;
+    color: #3677E8;
+}
+
+a {
+    color: #4582ec;
+    text-decoration: none;
+}
+
+.quote .tags {
+    margin-top: 10px;
+}
+
+.tags-box {
+    text-align: right;
+}
+
+.tag-item {
+    display: block;
+    margin: 4px;
+}
+

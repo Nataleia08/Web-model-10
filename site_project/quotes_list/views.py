@@ -73,3 +73,11 @@ def tag(request):
             return render(request, 'quotes_list/tag.html', context={'form': form, "message": "Tag not created!"})
 
     return render(request, 'quotes_list/tag.html', context={'form': TagForm()})
+
+def tags_list(request, tag_id):
+    tags = Quotes.objects.filter(tags__in=tag_id)
+    return render(request, 'quotes_list/tags_list.html', context={"tags": tags})
+
+def top_ten_tags(request):
+    top_tags = Tag.objects.all()[:9]
+    return render(request, "quotes_list/index.html", context={"top_tags":top_tags})

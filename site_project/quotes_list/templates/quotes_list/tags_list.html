@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Quotes to Scrape</title>
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"/>
-</head>
-<body>
-<main class="container">
-    <nav style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
-        <ul>
-            <li><a href="{% url 'quotes_list:create-quote' %}" role="button">Add quote</a></li>
-            <li><a href="{% url 'quotes_list:create-author' %}" role="button">Add author</a></li>
-        </ul>
-    </nav>
+{% extends "quotes_list/base.html" %}
 
-    {% for quote in quotes %}
+{% block content %}
+
+{% for quote in quotes %}
     <ul>
         <li>
             <a href="{% url 'quotes_list:author_details' author.id %}" role="button" class="secondary"><s>{{ quote.author }}</s></a>
@@ -23,6 +11,10 @@
         <li><p>Tags: <b>{{quote.tags}}</b></p></li>
     </ul>
     {% endfor %}
-</main>
-</body>
-</html>
+</div>
+
+{% endblock %}
+
+
+
+
