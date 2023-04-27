@@ -9,7 +9,7 @@ class Authors(models.Model):
     fullname = models.CharField(max_length=200, unique=True)
     born_date = models.DateField()
     born_location = models.CharField(max_length=200)
-    description = models.CharField(max_length=2000)
+    description = models.CharField(max_length=20000)
     # created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -25,7 +25,7 @@ class Tag(models.Model):
 class Quotes(models.Model):
     tags = models.ManyToManyField(Tag)
     author = models.ForeignKey(Authors, on_delete=models.CASCADE)
-    quote = models.CharField(max_length=2000)
+    quote = models.CharField(max_length=20000)
     # created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

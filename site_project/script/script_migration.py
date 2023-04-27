@@ -12,8 +12,7 @@ from pymongo import MongoClient
 client = MongoClient("mongodb+srv://nataleia_orlovska:uj40A6wY74dc4u@clusterhw7.uaenqgk.mongodb.net/?retryWrites=true&w=majority")
 db = client.Home_Work_7
 
-from site_project.quotes_list.models import Authors, Quotes, Tag
-from site_project.users.models import UsersSite
+
 
 
 authors = db.authors.find()

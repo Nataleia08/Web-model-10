@@ -31,6 +31,7 @@
                     <a href="{% url 'quotes_list:create_author' %}" role="button">Add author</a>
                 </p>
             </div>
+<div><a href="script" style = "button">Load information</a></div>
 {% else %}
             <div style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
                 <p>
@@ -69,10 +70,9 @@
 
     <div class="col-md-4 tags-box">
             <h2>Top Ten tags</h2>
-            {% for tag in top_tags %}
-            <a class="tag" href="tags_list">{{tag.name}}</a>
+            {% for tag in top_tags.all %}
+            <a class="tag" href="{% url 'quotes_list:tags_list' %}">{{tag.name}}</a>
         {% endfor %}
     </div>
-
 
 </body>

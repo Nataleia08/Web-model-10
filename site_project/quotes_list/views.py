@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from .forms import CreateQuoteForm, CreateAuthorForm, TagForm
 from .models import Authors, Quotes, Tag
 from django.core.paginator import Paginator
+import json
+
 
 
 
@@ -75,9 +77,44 @@ def tag(request):
     return render(request, 'quotes_list/tag.html', context={'form': TagForm()})
 
 def tags_list(request, tag_id):
-    tags = Quotes.objects.filter(tags__in=tag_id)
-    return render(request, 'quotes_list/tags_list.html', context={"tags": tags})
+    quotes = Quotes.objects.all()
+    return render(request, 'quotes_list/tags_list.html', context={"quotes": quotes})
 
 def top_ten_tags(request):
     top_tags = Tag.objects.all()[:9]
     return render(request, "quotes_list/index.html", context={"top_tags":top_tags})
+
+@login_required
+def script(request):
+    with open("script/authors.json") as fh:
+        authors = json.load(fh)
+
+    for author in authors:
+        Authors.objects.get_or_create(fullname=author["fullname"], born_date=author["born_date"],
+                                      born_location=author["born_location"], description=author["description"])
+
+    with open("script/quotes.json") as fh:
+        quotes = json.load(fh)
+
+    for quote in quotes:
+        tags = []
+        for tag in quote["tags"]:
+            t, *_ = Tag.objects.get_or_create(name=tag)
+            tags.append(t)
+        exist_quote = bool(len(Quotes.objects.filter(quote=quote["quote"])))
+
+        if not exist_quote:
+            author = db.authors.find_one({"_id": quote['author']})
+            au = Authors.objects.get(fullname=author["fullname"])
+            qu = Quotes.objects.create(quote=quote['quote'], author=au)
+            for tag in tags:
+                qu.tags.add(tag)
+
+    # with open("script/user_list.json") as fh:
+    #     user_list = json.load(fh)
+    #
+    # for us in user_list:
+    #     UsersSite.objects.get_or_create(nickname=us["fullname"], email=us["email"],
+    #                                     phone=us["phone"], login=us["email"])
+
+    return redirect(to='quotes_list:main')

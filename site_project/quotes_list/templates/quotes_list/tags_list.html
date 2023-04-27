@@ -3,16 +3,21 @@
 {% block content %}
 
 {% for quote in quotes %}
-    <ul>
-        <li>
-            <a href="{% url 'quotes_list:author_details' author.id %}" role="button" class="secondary"><s>{{ quote.author }}</s></a>
-        </li>
-        <li><p>Text: <b>{{quote.quote}}</b></p></li>
-        <li><p>Tags: <b>{{quote.tags}}</b></p></li>
-    </ul>
-    {% endfor %}
+<div class="row">
+<!--    <div class="col-md-8">-->
+    <div class="quote">
+        <span class="text" itemprop="text">{{quote.quote}}</span>
+        <span>by <small class="author" itemprop="author">{{quote.author}}</small>
+        <a href="{% url 'quotes_list:author_details' quote.author.id %}">(about)</a>
+        </span>
+        <div class="tags">
+            Tags:
+            {% for tag in quote.tags.all %}
+            <a class="tag" href="{% url 'quotes_list:tags_list' tag.id %}">{{tag.name}}</a>
+            {% endfor %}
+        </div>
+    </div>
 </div>
-
 {% endblock %}
 
 

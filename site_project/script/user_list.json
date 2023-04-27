@@ -1,0 +1,242 @@
+[
+      {
+            "nickname": "\u041f\u0435\u0442\u0440\u043e \u0410\u0440\u0445\u0438\u043f\u0435\u043d\u043a\u043e",
+            "email": "perebyinisostap@example.com",
+            "phone": "+38 064 273-34-32",
+            "login": "perebyinisostap@example.com"
+      },
+      {
+            "nickname": "\u0410\u0434\u0430\u043c \u041c\u0430\u0437\u0443\u0440",
+            "email": "tarasgereta@example.org",
+            "phone": "063 415-58-16",
+            "login": "tarasgereta@example.org"
+      },
+      {
+            "nickname": "\u0410\u043b\u0456\u043d\u0430 \u0414\u0435\u0439\u043d\u0435\u043a\u043e",
+            "email": "iakovenkobohuslav@example.net",
+            "phone": "+38 (019) 295-78-87",
+            "login": "iakovenkobohuslav@example.net"
+      },
+      {
+            "nickname": "\u041b\u0456\u043b\u0456\u044f \u0429\u0435\u0440\u0431\u0430\u043a",
+            "email": "kyrylo60@example.com",
+            "phone": "515 25 88",
+            "login": "kyrylo60@example.com"
+      },
+      {
+            "nickname": "\u041b\u0435\u043e\u043d\u0456\u0434 \u0413\u0430\u0432\u0440\u0438\u043b\u0435\u0446\u044c",
+            "email": "xbhydenko@example.com",
+            "phone": "629 11 11",
+            "login": "xbhydenko@example.com"
+      },
+      {
+            "nickname": "\u041d\u0430\u0434\u0456\u044f \u0414\u0435\u0440\u0435\u0432\u02bc\u044f\u043d\u043a\u043e",
+            "email": "nestorkhmara@example.org",
+            "phone": "+38 045 917-00-99",
+            "login": "nestorkhmara@example.org"
+      },
+      {
+            "nickname": "\u0421\u0435\u0440\u0433\u0456\u0439 \u041c\u0435\u0434\u0432\u0435\u0434\u0435\u043d\u043a\u043e",
+            "email": "ovlasenko@example.com",
+            "phone": "+38 013 083-00-81",
+            "login": "ovlasenko@example.com"
+      },
+      {
+            "nickname": "\u041d\u0430\u0442\u0430\u043b\u0456\u044f \u041c\u0430\u0437\u0443\u0440",
+            "email": "aaronshvedchenko@example.com",
+            "phone": "+38 (043) 085-41-26",
+            "login": "aaronshvedchenko@example.com"
+      },
+      {
+            "nickname": "\u0422\u0435\u0440\u0435\u0437\u0430 \u041a\u0430\u043d\u0456\u0432\u0435\u0446\u044c",
+            "email": "gkarpa@example.net",
+            "phone": "022 158 22 48",
+            "login": "gkarpa@example.net"
+      },
+      {
+            "nickname": "\u0412\u0430\u0440\u0432\u0430\u0440\u0430 \u0414\u0435\u0440\u043a\u0430\u0447",
+            "email": "leopoldperepelytsia@example.net",
+            "phone": "+38 083 114-72-13",
+            "login": "leopoldperepelytsia@example.net"
+      },
+      {
+            "nickname": "\u041e\u0445\u0440\u0456\u043c \u041e\u0440\u043b\u0438\u043a",
+            "email": "oholyk@example.org",
+            "phone": "+38 009 955 81 46",
+            "login": "oholyk@example.org"
+      },
+      {
+            "nickname": "\u0406\u0440\u0435\u043d\u0430 \u0421\u0438\u043c\u043e\u043d\u0435\u043d\u043a\u043e",
+            "email": "chervonenkoamaliia@example.org",
+            "phone": "992-21-93",
+            "login": "chervonenkoamaliia@example.org"
+      },
+      {
+            "nickname": "\u043f\u0430\u043d \u041d\u0430\u0437\u0430\u0440 \u0414\u0435\u043c\u02bc\u044f\u043d\u0447\u0443\u043a",
+            "email": "pshvachko@example.com",
+            "phone": "042 277-17-71",
+            "login": "pshvachko@example.com"
+      },
+      {
+            "nickname": "\u0412\u0430\u043b\u0435\u043d\u0442\u0438\u043d\u0430 \u041c\u0438\u0445\u0430\u043b\u044e\u043a",
+            "email": "zakharshelest@example.net",
+            "phone": "+38 052 089 22 60",
+            "login": "zakharshelest@example.net"
+      },
+      {
+            "nickname": "\u0404\u043b\u0438\u0441\u0430\u0432\u0435\u0442\u0430 \u0424\u0440\u0430\u043d\u0447\u0443\u043a",
+            "email": "odarkaavdieienko@example.org",
+            "phone": "187 19 32",
+            "login": "odarkaavdieienko@example.org"
+      },
+      {
+            "nickname": "\u041d\u0435\u0441\u0442\u043e\u0440 \u0404\u0441\u0438\u043f\u0435\u043d\u043a\u043e",
+            "email": "khoma05@example.net",
+            "phone": "015 668 40 58",
+            "login": "khoma05@example.net"
+      },
+      {
+            "nickname": "\u0421\u0432\u0456\u0442\u043b\u0430\u043d\u0430 \u0410\u043a\u0443\u043b\u0435\u043d\u043a\u043e",
+            "email": "okseniia18@example.org",
+            "phone": "+38 097 498 73 89",
+            "login": "okseniia18@example.org"
+      },
+      {
+            "nickname": "\u0413\u0430\u043b\u0438\u043d\u0430 \u0406\u0441\u0430\u0454\u0432\u0438\u0447",
+            "email": "jtarasenko@example.com",
+            "phone": "037 14 95",
+            "login": "jtarasenko@example.com"
+      },
+      {
+            "nickname": "\u0412\u043e\u043b\u043e\u0434\u0438\u043c\u0438\u0440 \u0414\u0435\u0440\u0435\u0432\u02bc\u044f\u043d\u043a\u043e",
+            "email": "vysochanhryhorii@example.org",
+            "phone": "551-74-28",
+            "login": "vysochanhryhorii@example.org"
+      },
+      {
+            "nickname": "\u041c\u0430\u0440\u0442\u0430 \u0424\u0430\u0441\u0442\u0435\u043d\u043a\u043e",
+            "email": "isaienkozynovii@example.org",
+            "phone": "056 287 74 51",
+            "login": "isaienkozynovii@example.org"
+      },
+      {
+            "nickname": "\u0412\u043e\u043b\u043e\u0434\u0438\u043c\u0438\u0440 \u0424\u0456\u043b\u0456\u043f\u0435\u043d\u043a\u043e",
+            "email": "vakhniistanislav@example.net",
+            "phone": "+38 023 152 78 31",
+            "login": "vakhniistanislav@example.net"
+      },
+      {
+            "nickname": "\u0413\u0440\u0438\u0433\u043e\u0440\u0456\u0439 \u0414\u0430\u043d\u0438\u043b\u044c\u0447\u0443\u043a",
+            "email": "panaskolisnychenko@example.org",
+            "phone": "346-25-87",
+            "login": "panaskolisnychenko@example.org"
+      },
+      {
+            "nickname": "\u041c\u0438\u043a\u0438\u0442\u0430 \u0423\u0441\u0438\u043a",
+            "email": "marta06@example.org",
+            "phone": "662-69-20",
+            "login": "marta06@example.org"
+      },
+      {
+            "nickname": "\u041b\u0435\u043e\u043f\u043e\u043b\u044c\u0434 \u0406\u0432\u0430\u043d\u0447\u0435\u043d\u043a\u043e",
+            "email": "panas69@example.net",
+            "phone": "077 874-61-83",
+            "login": "panas69@example.net"
+      },
+      {
+            "nickname": "\u0411\u043e\u0433\u043e\u0434\u0430\u0440 \u0417\u0430\u0441\u0443\u0445\u0430",
+            "email": "alinakovpak@example.org",
+            "phone": "054 354-59-49",
+            "login": "alinakovpak@example.org"
+      },
+      {
+            "nickname": "\u0414\u0435\u043c\u0438\u0434 \u0417\u0430\u0441\u0443\u0445\u0430",
+            "email": "sheremetaorkhyp@example.org",
+            "phone": "+38 015 030 33 70",
+            "login": "sheremetaorkhyp@example.org"
+      },
+      {
+            "nickname": "\u0410\u043c\u0430\u043b\u0456\u044f \u0422\u0430\u0440\u0430\u0441\u0435\u043d\u043a\u043e",
+            "email": "mkhudiak@example.org",
+            "phone": "586 59 86",
+            "login": "mkhudiak@example.org"
+      },
+      {
+            "nickname": "\u0421\u0432\u044f\u0442\u043e\u0441\u043b\u0430\u0432\u0430 \u041a\u0430\u0431\u0430\u043d\u0435\u043d\u043a\u043e",
+            "email": "leonid55@example.org",
+            "phone": "013 010 69 33",
+            "login": "leonid55@example.org"
+      },
+      {
+            "nickname": "\u043f\u0430\u043d\u0456 \u0417\u043b\u0430\u0442\u043e\u0441\u043b\u0430\u0432\u0430 \u0413\u0443\u0437\u0435\u043d\u043a\u043e",
+            "email": "aivasiuk@example.org",
+            "phone": "066 496 06 67",
+            "login": "aivasiuk@example.org"
+      },
+      {
+            "nickname": "\u0420\u043e\u043a\u0441\u043e\u043b\u0430\u043d\u0430 \u0423\u0441\u0442\u0435\u043d\u043a\u043e",
+            "email": "fedir85@example.net",
+            "phone": "858 65 19",
+            "login": "fedir85@example.net"
+      },
+      {
+            "nickname": "\u041c\u0430\u0440\u0438\u043d\u0430 \u0406\u0432\u0430\u0449\u0435\u043d\u043a\u043e",
+            "email": "marusiabatiuk@example.org",
+            "phone": "+38 047 882-80-97",
+            "login": "marusiabatiuk@example.org"
+      },
+      {
+            "nickname": "\u043f\u0430\u043d\u0456 \u0410\u043d\u0456\u0442\u0430 \u0410\u0432\u0440\u0430\u043c\u0435\u043d\u043a\u043e",
+            "email": "venhrynovychbohuslav@example.net",
+            "phone": "043 241 27 38",
+            "login": "venhrynovychbohuslav@example.net"
+      },
+      {
+            "nickname": "\u041b\u0456\u043b\u0456\u044f \u0411\u0430\u0431\u0430\u043a",
+            "email": "vsheremet@example.net",
+            "phone": "677-98-88",
+            "login": "vsheremet@example.net"
+      },
+      {
+            "nickname": "\u043f\u0430\u043d\u0456 \u042f\u0440\u043e\u0441\u043b\u0430\u0432\u0430 \u041f\u0435\u0442\u0440\u0438\u043a",
+            "email": "matiashorkhyp@example.net",
+            "phone": "+38 056 306 46 26",
+            "login": "matiashorkhyp@example.net"
+      },
+      {
+            "nickname": "\u0411\u043e\u0433\u0443\u0441\u043b\u0430\u0432\u0430 \u0421\u0443\u043f\u0440\u0443\u043d\u0435\u043d\u043a\u043e",
+            "email": "piatseniuk@example.org",
+            "phone": "+38 094 559 28 63",
+            "login": "piatseniuk@example.org"
+      },
+      {
+            "nickname": "\u0412\u0430\u043b\u0435\u0440\u0456\u0439 \u0425\u0440\u0438\u0441\u0442\u0435\u043d\u043a\u043e",
+            "email": "iarosholeksa@example.net",
+            "phone": "+38 009 187-34-76",
+            "login": "iarosholeksa@example.net"
+      },
+      {
+            "nickname": "\u0406\u0440\u0438\u043d\u0430 \u0411\u0430\u0439\u0434\u0430\u043a",
+            "email": "amaliia13@example.com",
+            "phone": "+38 056 542-11-01",
+            "login": "amaliia13@example.com"
+      },
+      {
+            "nickname": "\u0417\u043e\u0440\u044f\u043d \u0424\u0435\u0441\u0435\u043d\u043a\u043e",
+            "email": "ybazylevych@example.com",
+            "phone": "+38 010 204 24 73",
+            "login": "ybazylevych@example.com"
+      },
+      {
+            "nickname": "\u043f\u0430\u043d\u0456 \u0412\u043e\u043b\u043e\u0434\u0438\u043c\u0438\u0440\u0430 \u0413\u043e\u0434\u0443\u043d\u043e\u043a",
+            "email": "edyta33@example.net",
+            "phone": "+38 084 402 03 46",
+            "login": "edyta33@example.net"
+      },
+      {
+            "nickname": "\u0410\u0430\u0440\u043e\u043d \u0410\u043d\u0434\u0440\u0456\u0457\u0448\u0438\u043d",
+            "email": "azar70@example.org",
+            "phone": "845 46 01",
+            "login": "azar70@example.org"
+      }
+]
