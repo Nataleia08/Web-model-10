@@ -9,6 +9,8 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from .models import User
+import json
 
 from .forms import RegisterForm, LoginForm
 
@@ -52,3 +54,13 @@ def log_out_user(request):
 @login_required
 def profile(request):
     return render(request, 'users/profile.html')
+
+@login_required
+def script(request):
+    with open("script/user_list.json") as fh:
+        user_list = json.load(fh)
+
+    for us in user_list:
+        User.objects.get_or_create(first_name=us["nickname"], email=us["email"], username=us["login"])
+
+    return redirect(to='quotes_list:main')

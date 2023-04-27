@@ -27,8 +27,11 @@ for quote in quotes:
     new_quote = {}
     new_quote["quote"] = str(quote['quote'])
     new_quote["tags"] = str(quote["tags"])
-    new_quote["author"] = str(quote["author"])
-    quotes_list.append(new_quote)
+    au = db.authors.find_one({"_id": quote['author']})
+    if au:
+        new_quote["author"] = str(au["fullname"])
+        quotes_list.append(new_quote)
+
 
 with open("quotes.json", "w") as fh:
     json.dump(quotes_list, fh, indent=6)

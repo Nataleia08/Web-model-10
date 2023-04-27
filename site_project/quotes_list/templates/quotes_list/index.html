@@ -31,7 +31,8 @@
                     <a href="{% url 'quotes_list:create_author' %}" role="button">Add author</a>
                 </p>
             </div>
-<div><a href="script" style = "button">Load information</a></div>
+<div><a href="script" style = "button">Load quotes and authors information</a></div>
+<div><a href="users/script" style = "button">Load users information</a></div>
 {% else %}
             <div style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
                 <p>
@@ -54,25 +55,25 @@
         <div class="tags">
             Tags:
             {% for tag in quote.tags.all %}
-            <a class="tag" href="{% url 'quotes_list:tags_list' tag.id %}">{{tag.name}}</a>
+            <a class="tag">{{tag.name}}</a>
             {% endfor %}
         </div>
     </div>
 </div>
 {% endfor %}
-    <nav>
-        <ul class="pager">
-            <li class="next">
-                <a href="next_page">Next <span aria-hidden="true">→</span></a>
-            </li>
-        </ul>
-    </nav>
+<!--    <nav>-->
+<!--        <ul class="pager">-->
+<!--            <li class="next">-->
+<!--                <a href="next_page">Next <span aria-hidden="true">→</span></a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
 
-    <div class="col-md-4 tags-box">
-            <h2>Top Ten tags</h2>
-            {% for tag in top_tags.all %}
-            <a class="tag" href="{% url 'quotes_list:tags_list' %}">{{tag.name}}</a>
-        {% endfor %}
-    </div>
+<!--    <div class="col-md-4 tags-box">-->
+<!--            <h2>Top Ten tags</h2>-->
+<!--            {% for tag in top_tags.all %}-->
+<!--            <a class="tag" href="{% url 'quotes_list:tags_list' %}">{{tag.name}}</a>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
 
 </body>

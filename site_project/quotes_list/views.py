@@ -14,10 +14,10 @@ import json
 # Create your views here.
 def main(request, page = 1):
     quotes_list = Quotes.objects.all()
-    per_page = 10
-    paginator = Paginator(quotes_list, per_page)
-    quotes_on_page = paginator.page(page)
-    return render(request, 'quotes_list/index.html', context={"quotes_list": quotes_on_page})
+    # per_page = 100
+    # paginator = Paginator(quotes_list, per_page)
+    # quotes_on_page = paginator.page(page)
+    return render(request, 'quotes_list/index.html', context={"quotes_list": quotes_list})
 
 @login_required
 def create_author(request):
@@ -46,8 +46,7 @@ def create_quote(request):
             choice_tags = Tag.objects.filter(name__in=request.POST.getlist('tags'))
             for tag in choice_tags.iterator():
                 new_quote.tags.add(tag)
-            # choice_author = Authors.objects.filter(fullname__in=request.POST.getlist('authors'))
-            # new_quote.author = choice_author
+
             form.fields["author"].queryset = Authors.objects.filter(fullname=form.cleaned_data['author'])
 
             return redirect(to='quotes_list:main')
@@ -60,9 +59,6 @@ def author_details(request, author_id):
     author = get_object_or_404(Authors, pk = author_id)
     return render(request, 'quotes_list/author_details.html', {"author": author})
 
-
-# def next_page(request, number_page):
-#     if request.method == "GET":
 
 
 def tag(request):
@@ -98,23 +94,16 @@ def script(request):
 
     for quote in quotes:
         tags = []
-        for tag in quote["tags"]:
-            t, *_ = Tag.objects.get_or_create(name=tag)
+        tags_list_file = quote["tags"].removeprefix("[").removesuffix("]").split(",")
+        for tag in tags_list_file:
+            t, *_ = Tag.objects.get_or_create(name=tag.strip().removeprefix("'").removesuffix("'"))
             tags.append(t)
         exist_quote = bool(len(Quotes.objects.filter(quote=quote["quote"])))
 
         if not exist_quote:
-            author = db.authors.find_one({"_id": quote['author']})
-            au = Authors.objects.get(fullname=author["fullname"])
+            au = Authors.objects.get(fullname=quote["author"])
             qu = Quotes.objects.create(quote=quote['quote'], author=au)
             for tag in tags:
                 qu.tags.add(tag)
-
-    # with open("script/user_list.json") as fh:
-    #     user_list = json.load(fh)
-    #
-    # for us in user_list:
-    #     UsersSite.objects.get_or_create(nickname=us["fullname"], email=us["email"],
-    #                                     phone=us["phone"], login=us["email"])
 
     return redirect(to='quotes_list:main')
